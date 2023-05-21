@@ -1,0 +1,66 @@
+﻿@model PizzaStore.Models.User
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    <style>
+
+        .heading {
+            background-color: darkgray;
+            color: white;
+            border: 7px white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 2px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container col-lg-6">
+        <h2 class="heading">Register</h2>
+        <form asp-action="Register" asp-controller="Account" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Full Name</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label">Username</label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="password" class="control-label">Password</label>
+                <input asp-for="password" class="form-control" />
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="password" class="control-label">Re-Enter Password</label>
+                <input asp-for="password" class="form-control" />
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">Email Address</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <br />
+            <div class="form-group">
+                <input id="register-btn" type="submit" value="Register" class="btn btn-warning" />
+            </div>
+            <br/>
+            <p>Already Registered? <a asp-action="Login" style="margin-right:5px;" class="btn btn-success">Login</a></p>
+        </form>
+    </div>
+    
+</body>
+</html>

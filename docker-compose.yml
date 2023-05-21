@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  PizzaStore:
+    image: ${DOCKER_REGISTRY-}PizzaStore
+    build:
+      context: .
+      dockerfile: PizzaStore/Dockerfile

@@ -1,0 +1,18 @@
+name: dockercompose4278799043618755298
+services:
+  PizzaStore:
+    build:
+      context: C:\Users\sanbandi\Desktop\Phase4-Final-Assessment-master
+      dockerfile: PizzaStore/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: PizzaStore
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+networks:
+  default:
+    name: dockercompose4278799043618755298_default
